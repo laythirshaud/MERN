@@ -27,6 +27,7 @@ class Sensei extends Ninja{
         this.health=200;
         this.speed=10;
         this.strength=10;
+        this.wisdom=10;
     }
     speakWisdom(){
         super.drinkSake();
