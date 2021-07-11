@@ -88,6 +88,6 @@ function makeDojo(name, students){
     }
     return dojo;
 }
-// the result= TypeError: Assignment to constant variable.
+// the result= TypeError: Assignment to constant variable. change the const from dictionary to string
 
 
