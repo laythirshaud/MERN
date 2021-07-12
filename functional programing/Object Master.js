@@ -24,21 +24,44 @@ const pokémon = Object.freeze([
         { "id": 148, "name": "Dragonair",  "types": ["dragon"] }
     ]);
 
-    // const bListPkmn = pokémon.filter( p => p.name[0] === "B" );
-    // console.log(bListPkmn);
-    // const pkmnIds = pokémon.map( p => p.id )
-    // console.log(pkmnIds);
+    const bListPkmn = pokémon.filter( p => p.name[0] === "B" );
+    console.log(bListPkmn);
+    const pkmnIds = pokémon.map( p => p.id )
+    console.log(pkmnIds);
 
 
-    // // 1 an array of pokémon objects where the id is evenly divisible by 3
-    // const a =pokémon.filter(value=> value.id % 3 === 0);
-    // console.log(a);
+    // 1 an array of pokémon objects where the id is evenly divisible by 3
+    const a =pokémon.filter(value=> value.id % 3 === 0);
+    console.log(a);
 
-    // //2 an array of pokémon objects that are "fire" type
-    // const b =pokémon.filter(x => x.types =="fire");
-    // console.log(b);
+    //2 an array of pokémon objects that are "fire" type
+    const b =pokémon.filter(x => x.types.includes("fire"));
+    console.log(b);
 
     //3 an array of pokémon objects that have more than one type
-    const c =pokémon.filter
+    const c =pokémon.filter(p => p.types.length > 1);
+    console.log(c);
+
+    //4  an array with just the names of the pokémon
+    const d= pokémon.map(x => x.name)
+    console.log(d);
+
+    //5 an array with just the names of pokémon with an id greater than 99
+    const e=pokémon.filter(p =>p.id > 99).map(p=> p.name);
+    console.log(e);
+
+    //6 an array with just the names of the pokémon whose only type is poison
+    const f =pokémon.filter(p=> p.types == ("poison")).map(p=> p.name);
+    console.log(f);
+
+    //7 an array containing just the first type of all the pokémon whose second type is "flying"
+    const g=pokémon.filter(p=> p.types[1]=="flying").map(p=>p.types[0]);
+    console.log(g);
+
+    //8 a count of the number of pokémon that are "normal" type
+    const h=pokémon.filter(p=> p.types.includes("normal")).length
+    console.log(h);
+
+
 
 
