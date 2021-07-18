@@ -1,0 +1,25 @@
+h1 {
+    margin-right : 40px;
+}
+button{
+padding: 15px 15px;
+border-radius: 10px;
+justify-content: space-around;
+border: 0.75px solid rgb(230, 230, 230) gray;
+align-items: 'center';
+width: 100px ;
+margin-right: 40px;
+
+}
+.button:hover {
+    background:black;
+    color : white;
+}
+.blackButton{
+    background-color: black;
+    color: white;
+}
+.whiteButton{
+    background-color: white;
+    color: black;
+}
