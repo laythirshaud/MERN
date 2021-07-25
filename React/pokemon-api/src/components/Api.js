@@ -16,7 +16,7 @@ const Api = () => {
     }
     return (
         <div>
-            <Button variant="contained" color="primary" onClick={NmaePokemon}> Nmae Pokemon</Button>
+            <Button variant="contained" color="primary" onClick={NmaePokemon}> Fetch Pokemon</Button>
             <ul>
                 {Pokemon.map(
                         (item, i) => {

@@ -14,7 +14,7 @@ const AxiosApi = () => {
     
     return (
         <div>
-            <Button variant="contained" color="primary" onClick={layth}> Nmae Pokemon</Button>
+            <Button variant="contained" color="primary" onClick={layth}> Fetch Pokemon</Button>
             <ul>
                 {   pokemons.map(
                         (item, x) => {
