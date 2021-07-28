@@ -1,0 +1,872 @@
+Microsoft Windows [Version 10.0.10586]
+(c) 2016 Microsoft Corporation. All rights reserved.
+
+C:\Windows\system32>cd c:/"Program Files"/MongoDB/Server/5.0/bin/
+
+c:\Program Files\MongoDB\Server\5.0\bin>mongo.exe
+MongoDB shell version v5.0.1
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Error: couldn't connect to server 127.0.0.1:27017, connection attempt failed: SocketException: Error connecting to 127.0.0.1:27017 :: caused by :: No connection could be made because the target machine actively refused it. :
+connect@src/mongo/shell/mongo.js:372:17
+@(connect):2:6
+exception: connect failed
+exiting with code 1
+
+c:\Program Files\MongoDB\Server\5.0\bin>
+
+c:\Program Files\MongoDB\Server\5.0\bin>service mongod start
+'service' is not recognized as an internal or external command,
+operable program or batch file.
+
+c:\Program Files\MongoDB\Server\5.0\bin>service mongod start
+'service' is not recognized as an internal or external command,
+operable program or batch file.
+
+c:\Program Files\MongoDB\Server\5.0\bin>sudo service mongodb stop
+'sudo' is not recognized as an internal or external command,
+operable program or batch file.
+
+c:\Program Files\MongoDB\Server\5.0\bin>mongo.exe
+MongoDB shell version v5.0.1
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Error: couldn't connect to server 127.0.0.1:27017, connection attempt failed: SocketException: Error connecting to 127.0.0.1:27017 :: caused by :: No connection could be made because the target machine actively refused it. :
+connect@src/mongo/shell/mongo.js:372:17
+@(connect):2:6
+exception: connect failed
+exiting with code 1
+
+c:\Program Files\MongoDB\Server\5.0\bin>mongo
+MongoDB shell version v5.0.1
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Error: couldn't connect to server 127.0.0.1:27017, connection attempt failed: SocketException: Error connecting to 127.0.0.1:27017 :: caused by :: No connection could be made because the target machine actively refused it. :
+connect@src/mongo/shell/mongo.js:372:17
+@(connect):2:6
+exception: connect failed
+exiting with code 1
+
+c:\Program Files\MongoDB\Server\5.0\bin>mongo.exe
+MongoDB shell version v5.0.1
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("5947fc5f-d67b-4129-974c-8af9f66fa638") }
+MongoDB server version: 5.0.1
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+We recommend you begin using "mongosh".
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+        https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+        https://community.mongodb.com
+---
+The server generated these startup warnings when booting:
+        2021-07-28T11:25:50.651+03:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> use my_first_db
+switched to db my_first_db
+> db.criateCollection("Students")
+uncaught exception: TypeError: db.criateCollection is not a function :
+@(shell):1:1
+> db.createCollection("Students")
+{ "ok" : 1 }
+> db.Students.insert({name:layth,home_state:sir,lucky_number:7,birthday::{month:3,day:19,year:1998}})
+uncaught exception: SyntaxError: expected expression, got ':' :
+@(shell):1:70
+> db.Students.insert({name:ibrahem,home_state:ramallah,lucky_number:8,birthday::{month:8,day:9,year:1989}})
+uncaught exception: SyntaxError: expected expression, got ':' :
+@(shell):1:77
+> db.Students.insert({name:ibrahem,home_state:ramallah,lucky_number:8,birthday:{month:8,day:9,year:1989}})
+uncaught exception: ReferenceError: ibrahem is not defined :
+@(shell):1:21
+> db.Students.insert({name:"ibrahem",home_state:"ramallah",lucky_number:8,birthday:{month:8,day:9,year:1989}})
+WriteResult({ "nInserted" : 1 })
+> db.Students.insert({name:"layth",home_state:"jenin",lucky_number:7,birthday::{month:3,day:19,year:1998}})
+uncaught exception: SyntaxError: expected expression, got ':' :
+@(shell):1:76
+> db.Students.insert({name:"layth",home_state:"jenin",lucky_number:7,birthday:{month:3,day:19,year:1998}})
+WriteResult({ "nInserted" : 1 })
+> db.Students.insert({name:"wadee",home_state:"nablus",lucky_number:7,birthday:{month:12,day:6,year:1993}})
+WriteResult({ "nInserted" : 1 })
+> db.Students.insert({name:"tariq",home_state:"nablus",lucky_number:5,birthday:{month:10,day:28,year:1993}})
+WriteResult({ "nInserted" : 1 })
+> db.Students.insert({name:"ahmad",home_state:"ramallah",lucky_number:3,birthday:{month:5,day:15,year:1998}})
+WriteResult({ "nInserted" : 1 })
+> db.Student.find({})
+> db.Students.find({})
+{ "_id" : ObjectId("61011770c25a4f71d0cf9f71"), "name" : "ibrahem", "home_state" : "ramallah", "lucky_number" : 8, "birthday" : { "month" : 8, "day" : 9, "year" : 1989 } }
+{ "_id" : ObjectId("610117a6c25a4f71d0cf9f72"), "name" : "layth", "home_state" : "jenin", "lucky_number" : 7, "birthday" : { "month" : 3, "day" : 19, "year" : 1998 } }
+{ "_id" : ObjectId("610117e4c25a4f71d0cf9f73"), "name" : "wadee", "home_state" : "nablus", "lucky_number" : 7, "birthday" : { "month" : 12, "day" : 6, "year" : 1993 } }
+{ "_id" : ObjectId("61011822c25a4f71d0cf9f74"), "name" : "tariq", "home_state" : "nablus", "lucky_number" : 5, "birthday" : { "month" : 10, "day" : 28, "year" : 1993 } }
+{ "_id" : ObjectId("61011854c25a4f71d0cf9f75"), "name" : "ahmad", "home_state" : "ramallah", "lucky_number" : 3, "birthday" : { "month" : 5, "day" : 15, "year" : 1998 } }
+> db.Students.find({}).pretty()
+{
+        "_id" : ObjectId("61011770c25a4f71d0cf9f71"),
+        "name" : "ibrahem",
+        "home_state" : "ramallah",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 8,
+                "day" : 9,
+                "year" : 1989
+        }
+}
+{
+        "_id" : ObjectId("610117a6c25a4f71d0cf9f72"),
+        "name" : "layth",
+        "home_state" : "jenin",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : 3,
+                "day" : 19,
+                "year" : 1998
+        }
+}
+{
+        "_id" : ObjectId("610117e4c25a4f71d0cf9f73"),
+        "name" : "wadee",
+        "home_state" : "nablus",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : 12,
+                "day" : 6,
+                "year" : 1993
+        }
+}
+{
+        "_id" : ObjectId("61011822c25a4f71d0cf9f74"),
+        "name" : "tariq",
+        "home_state" : "nablus",
+        "lucky_number" : 5,
+        "birthday" : {
+                "month" : 10,
+                "day" : 28,
+                "year" : 1993
+        }
+}
+{
+        "_id" : ObjectId("61011854c25a4f71d0cf9f75"),
+        "name" : "ahmad",
+        "home_state" : "ramallah",
+        "lucky_number" : 3,
+        "birthday" : {
+                "month" : 5,
+                "day" : 15,
+                "year" : 1998
+        }
+}
+> db.Students.find({home_state:jenin}).pretty()
+uncaught exception: ReferenceError: jenin is not defined :
+@(shell):1:19
+> db.Students.find({home_state:jinen}).pretty()
+uncaught exception: ReferenceError: jinen is not defined :
+@(shell):1:19
+> db.Students.find({home_state:"jenin"}).pretty()
+{
+        "_id" : ObjectId("610117a6c25a4f71d0cf9f72"),
+        "name" : "layth",
+        "home_state" : "jenin",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : 3,
+                "day" : 19,
+                "year" : 1998
+        }
+}
+> db.Students.find({lucky_name:{$gt:3}}).pretty()
+> db.Students.find({lucky_name:{$gt:1}}).pretty()
+> db.Students.find({lucky_number:{$gt:1}}).pretty()
+{
+        "_id" : ObjectId("61011770c25a4f71d0cf9f71"),
+        "name" : "ibrahem",
+        "home_state" : "ramallah",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 8,
+                "day" : 9,
+                "year" : 1989
+        }
+}
+{
+        "_id" : ObjectId("610117a6c25a4f71d0cf9f72"),
+        "name" : "layth",
+        "home_state" : "jenin",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : 3,
+                "day" : 19,
+                "year" : 1998
+        }
+}
+{
+        "_id" : ObjectId("610117e4c25a4f71d0cf9f73"),
+        "name" : "wadee",
+        "home_state" : "nablus",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : 12,
+                "day" : 6,
+                "year" : 1993
+        }
+}
+{
+        "_id" : ObjectId("61011822c25a4f71d0cf9f74"),
+        "name" : "tariq",
+        "home_state" : "nablus",
+        "lucky_number" : 5,
+        "birthday" : {
+                "month" : 10,
+                "day" : 28,
+                "year" : 1993
+        }
+}
+{
+        "_id" : ObjectId("61011854c25a4f71d0cf9f75"),
+        "name" : "ahmad",
+        "home_state" : "ramallah",
+        "lucky_number" : 3,
+        "birthday" : {
+                "month" : 5,
+                "day" : 15,
+                "year" : 1998
+        }
+}
+> db.Students.find({lucky_number:{$gt:3}}).pretty()
+{
+        "_id" : ObjectId("61011770c25a4f71d0cf9f71"),
+        "name" : "ibrahem",
+        "home_state" : "ramallah",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 8,
+                "day" : 9,
+                "year" : 1989
+        }
+}
+{
+        "_id" : ObjectId("610117a6c25a4f71d0cf9f72"),
+        "name" : "layth",
+        "home_state" : "jenin",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : 3,
+                "day" : 19,
+                "year" : 1998
+        }
+}
+{
+        "_id" : ObjectId("610117e4c25a4f71d0cf9f73"),
+        "name" : "wadee",
+        "home_state" : "nablus",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : 12,
+                "day" : 6,
+                "year" : 1993
+        }
+}
+{
+        "_id" : ObjectId("61011822c25a4f71d0cf9f74"),
+        "name" : "tariq",
+        "home_state" : "nablus",
+        "lucky_number" : 5,
+        "birthday" : {
+                "month" : 10,
+                "day" : 28,
+                "year" : 1993
+        }
+}
+> db.Students.find({lucky_number:{$lte:10}}).pretty()
+{
+        "_id" : ObjectId("61011770c25a4f71d0cf9f71"),
+        "name" : "ibrahem",
+        "home_state" : "ramallah",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 8,
+                "day" : 9,
+                "year" : 1989
+        }
+}
+{
+        "_id" : ObjectId("610117a6c25a4f71d0cf9f72"),
+        "name" : "layth",
+        "home_state" : "jenin",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : 3,
+                "day" : 19,
+                "year" : 1998
+        }
+}
+{
+        "_id" : ObjectId("610117e4c25a4f71d0cf9f73"),
+        "name" : "wadee",
+        "home_state" : "nablus",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : 12,
+                "day" : 6,
+                "year" : 1993
+        }
+}
+{
+        "_id" : ObjectId("61011822c25a4f71d0cf9f74"),
+        "name" : "tariq",
+        "home_state" : "nablus",
+        "lucky_number" : 5,
+        "birthday" : {
+                "month" : 10,
+                "day" : 28,
+                "year" : 1993
+        }
+}
+{
+        "_id" : ObjectId("61011854c25a4f71d0cf9f75"),
+        "name" : "ahmad",
+        "home_state" : "ramallah",
+        "lucky_number" : 3,
+        "birthday" : {
+                "month" : 5,
+                "day" : 15,
+                "year" : 1998
+        }
+}
+> db.Students.find({lucky_number:{$gte:1}{$lte:9}}).pretty()
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:39
+> db.Students.find({lukcy_number:$and:[{$gte:1},{$lte:9}]}).pretty()
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:35
+> db.Students.find({lukcy_number:{$and:[{$gte:1},{$lte:9}]}}).pretty()
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown operator: $and",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.Students.find({lukcy_number:{$and:[{$gte:1},{$lte:9}]}})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown operator: $and",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.Students.find({lukcy_number:{$and:[{$gte:1},{$lte:9}]}})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown operator: $and",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.Students.find({$and:[{lucky_number:{$gte:1}},{lucky_number:{$lte:9}}]})
+{ "_id" : ObjectId("61011770c25a4f71d0cf9f71"), "name" : "ibrahem", "home_state" : "ramallah", "lucky_number" : 8, "birthday" : { "month" : 8, "day" : 9, "year" : 1989 } }
+{ "_id" : ObjectId("610117a6c25a4f71d0cf9f72"), "name" : "layth", "home_state" : "jenin", "lucky_number" : 7, "birthday" : { "month" : 3, "day" : 19, "year" : 1998 } }
+{ "_id" : ObjectId("610117e4c25a4f71d0cf9f73"), "name" : "wadee", "home_state" : "nablus", "lucky_number" : 7, "birthday" : { "month" : 12, "day" : 6, "year" : 1993 } }
+{ "_id" : ObjectId("61011822c25a4f71d0cf9f74"), "name" : "tariq", "home_state" : "nablus", "lucky_number" : 5, "birthday" : { "month" : 10, "day" : 28, "year" : 1993 } }
+{ "_id" : ObjectId("61011854c25a4f71d0cf9f75"), "name" : "ahmad", "home_state" : "ramallah", "lucky_number" : 3, "birthday" : { "month" : 5, "day" : 15, "year" : 1998 } }
+> db.Students.find({$and:[{lucky_number:{$gte:1}},{lucky_number:{$lte:9}}]}).pretty()
+{
+        "_id" : ObjectId("61011770c25a4f71d0cf9f71"),
+        "name" : "ibrahem",
+        "home_state" : "ramallah",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 8,
+                "day" : 9,
+                "year" : 1989
+        }
+}
+{
+        "_id" : ObjectId("610117a6c25a4f71d0cf9f72"),
+        "name" : "layth",
+        "home_state" : "jenin",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : 3,
+                "day" : 19,
+                "year" : 1998
+        }
+}
+{
+        "_id" : ObjectId("610117e4c25a4f71d0cf9f73"),
+        "name" : "wadee",
+        "home_state" : "nablus",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : 12,
+                "day" : 6,
+                "year" : 1993
+        }
+}
+{
+        "_id" : ObjectId("61011822c25a4f71d0cf9f74"),
+        "name" : "tariq",
+        "home_state" : "nablus",
+        "lucky_number" : 5,
+        "birthday" : {
+                "month" : 10,
+                "day" : 28,
+                "year" : 1993
+        }
+}
+{
+        "_id" : ObjectId("61011854c25a4f71d0cf9f75"),
+        "name" : "ahmad",
+        "home_state" : "ramallah",
+        "lucky_number" : 3,
+        "birthday" : {
+                "month" : 5,
+                "day" : 15,
+                "year" : 1998
+        }
+}
+> db.Students.find({lucky_number:{$and:[{$gte:1},{$lte:9}]}}).pretty()
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown operator: $and",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.Students.find({$and:[{lucky_number:{$gte:1}},{lucky_number:{$lte:9}}]}).pretty()
+{
+        "_id" : ObjectId("61011770c25a4f71d0cf9f71"),
+        "name" : "ibrahem",
+        "home_state" : "ramallah",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 8,
+                "day" : 9,
+                "year" : 1989
+        }
+}
+{
+        "_id" : ObjectId("610117a6c25a4f71d0cf9f72"),
+        "name" : "layth",
+        "home_state" : "jenin",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : 3,
+                "day" : 19,
+                "year" : 1998
+        }
+}
+{
+        "_id" : ObjectId("610117e4c25a4f71d0cf9f73"),
+        "name" : "wadee",
+        "home_state" : "nablus",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : 12,
+                "day" : 6,
+                "year" : 1993
+        }
+}
+{
+        "_id" : ObjectId("61011822c25a4f71d0cf9f74"),
+        "name" : "tariq",
+        "home_state" : "nablus",
+        "lucky_number" : 5,
+        "birthday" : {
+                "month" : 10,
+                "day" : 28,
+                "year" : 1993
+        }
+}
+{
+        "_id" : ObjectId("61011854c25a4f71d0cf9f75"),
+        "name" : "ahmad",
+        "home_state" : "ramallah",
+        "lucky_number" : 3,
+        "birthday" : {
+                "month" : 5,
+                "day" : 15,
+                "year" : 1998
+        }
+}
+> db.students.update({_id: ObjectId("5463d871a6a96d5ed6252f4d")}, {$push: {interests: 'snowboarding'}})
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.students.update({$push: [interest: 'coding','brunch','MongoDB']})
+uncaught exception: SyntaxError: missing ] after element list :
+@(shell):1:36
+> db.students.update({$push: {interest: ['coding','brunch','MongoDB']}})
+uncaught exception: Error: need an update object or pipeline :
+DBCollection.prototype._parseUpdate@src/mongo/shell/collection.js:461:15
+DBCollection.prototype.update@src/mongo/shell/collection.js:510:18
+@(shell):1:1
+> db.students.update({$push: {interest:['coding','brunch','MongoDB']}})
+uncaught exception: Error: need an update object or pipeline :
+DBCollection.prototype._parseUpdate@src/mongo/shell/collection.js:461:15
+DBCollection.prototype.update@src/mongo/shell/collection.js:510:18
+@(shell):1:1
+> db.Students.update({$push: {interest:['coding','brunch','MongoDB']}})
+uncaught exception: Error: need an update object or pipeline :
+DBCollection.prototype._parseUpdate@src/mongo/shell/collection.js:461:15
+DBCollection.prototype.update@src/mongo/shell/collection.js:510:18
+@(shell):1:1
+> db.Students.update({$push: {interest:['coding','brunch','MongoDB']}}).pretty
+uncaught exception: Error: need an update object or pipeline :
+DBCollection.prototype._parseUpdate@src/mongo/shell/collection.js:461:15
+DBCollection.prototype.update@src/mongo/shell/collection.js:510:18
+@(shell):1:1
+> db.Students.update({$push: {interest:['coding','brunch','MongoDB']}}).pretty()
+uncaught exception: Error: need an update object or pipeline :
+DBCollection.prototype._parseUpdate@src/mongo/shell/collection.js:461:15
+DBCollection.prototype.update@src/mongo/shell/collection.js:510:18
+@(shell):1:1
+> db.Students.update({$push: {interest:["coding","brunch","MongoDB"]}}).pretty()
+uncaught exception: Error: need an update object or pipeline :
+DBCollection.prototype._parseUpdate@src/mongo/shell/collection.js:461:15
+DBCollection.prototype.update@src/mongo/shell/collection.js:510:18
+@(shell):1:1
+> db.Students.update({$set: {interest:["coding","brunch","MongoDB"]}}).pretty()
+uncaught exception: Error: need an update object or pipeline :
+DBCollection.prototype._parseUpdate@src/mongo/shell/collection.js:461:15
+DBCollection.prototype.update@src/mongo/shell/collection.js:510:18
+@(shell):1:1
+> db.Students.update({$set: {interest:["coding","brunch","MongoDB"]}})
+uncaught exception: Error: need an update object or pipeline :
+DBCollection.prototype._parseUpdate@src/mongo/shell/collection.js:461:15
+DBCollection.prototype.update@src/mongo/shell/collection.js:510:18
+@(shell):1:1
+> db.Students.update({},{$set: {interest:["coding","brunch","MongoDB"]}},false,true)
+WriteResult({ "nMatched" : 5, "nUpserted" : 0, "nModified" : 5 })
+> db.Students.update({},{$set: {interests:["coding","brunch","MongoDB"]}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Students.update({layth},{$set: {interests:["coding","brunch","python"]}})
+uncaught exception: ReferenceError: layth is not defined :
+@(shell):1:21
+> db.Students.update({name:layth},{$set: {interests:["coding","brunch","python"]}})
+uncaught exception: ReferenceError: layth is not defined :
+@(shell):1:21
+> db.Students.update({name:"layth"},{$set: {interests:["coding","brunch","python"]}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Students.update({name:layth},{$push: {interests:["anything"]}})
+uncaught exception: ReferenceError: layth is not defined :
+@(shell):1:21
+> db.Students.update({name:"layth"},{$push: {interests:["anything"]}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Students.update({name:"ahmad"},{$push: {interests:["java"]}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Students.update({name:"wadee"},{$push: {interests:["clothes"]}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Students.update({name:"ibrahem"},{$push: {interests:["photo"]}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Students.update({name:"ibrahem"},{$push: {interests:["taxes"]}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Students.update({name:"ibrahem"},{$pop: {interests:1}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> dp.Students.find({name:ibrahem})
+uncaught exception: ReferenceError: dp is not defined :
+@(shell):1:1
+> dp.Students.find({name:"ibrahem"})'pretty
+uncaught exception: SyntaxError: '' literal not terminated before end of script :
+@(shell):1:41
+> dp.Students.find({name:"ibrahem"})'pretty()
+uncaught exception: SyntaxError: '' literal not terminated before end of script :
+@(shell):1:43
+> dp.Students.find({name:"ibrahem"})
+uncaught exception: ReferenceError: dp is not defined :
+@(shell):1:1
+> dp.Students.find({name:"ibrahem"})
+uncaught exception: ReferenceError: dp is not defined :
+@(shell):1:1
+> db.Students.find({name:"ibrahem"})
+{ "_id" : ObjectId("61011770c25a4f71d0cf9f71"), "name" : "ibrahem", "home_state" : "ramallah", "lucky_number" : 8, "birthday" : { "month" : 8, "day" : 9, "year" : 1989 }, "interest" : [ "coding", "brunch", "MongoDB" ], "interests" : [ "coding", "brunch", "MongoDB", [ "photo" ] ] }
+> db.Students.find({name:"ibrahem"}).pretty()
+{
+        "_id" : ObjectId("61011770c25a4f71d0cf9f71"),
+        "name" : "ibrahem",
+        "home_state" : "ramallah",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 8,
+                "day" : 9,
+                "year" : 1989
+        },
+        "interest" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ],
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                [
+                        "photo"
+                ]
+        ]
+}
+> db.Students.update({name:"ibrahem"},{$push: {interests:["taxes"]}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Students.find({name:"ibrahem"}).pretty()
+{
+        "_id" : ObjectId("61011770c25a4f71d0cf9f71"),
+        "name" : "ibrahem",
+        "home_state" : "ramallah",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 8,
+                "day" : 9,
+                "year" : 1989
+        },
+        "interest" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ],
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                [
+                        "photo"
+                ],
+                [
+                        "taxes"
+                ]
+        ]
+}
+> db.Students.update({name:"ibrahem"},{$pop: {interests:1}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Students.update({name:"ibrahem"},{$pop: {interests:1}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Students.find({name:"ibrahem"}).pretty()
+{
+        "_id" : ObjectId("61011770c25a4f71d0cf9f71"),
+        "name" : "ibrahem",
+        "home_state" : "ramallah",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 8,
+                "day" : 9,
+                "year" : 1989
+        },
+        "interest" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ],
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+> db.Students.update({name:"ibrahem"},{$push: {interests:"taxes"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Students.find({name:"ibrahem"}).pretty()
+{
+        "_id" : ObjectId("61011770c25a4f71d0cf9f71"),
+        "name" : "ibrahem",
+        "home_state" : "ramallah",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 8,
+                "day" : 9,
+                "year" : 1989
+        },
+        "interest" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ],
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                "taxes"
+        ]
+}
+> db.Students.update({name:"ibrahem"},{$pop: {interests:1}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Students.find({name:"ibrahem"}).pretty()
+{
+        "_id" : ObjectId("61011770c25a4f71d0cf9f71"),
+        "name" : "ibrahem",
+        "home_state" : "ramallah",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 8,
+                "day" : 9,
+                "year" : 1989
+        },
+        "interest" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ],
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+> db.Students.update({name:"ibrahem"},{$push: {interests:"photo"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Students.find({name:"ibrahem"}).pretty()
+{
+        "_id" : ObjectId("61011770c25a4f71d0cf9f71"),
+        "name" : "ibrahem",
+        "home_state" : "ramallah",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 8,
+                "day" : 9,
+                "year" : 1989
+        },
+        "interest" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ],
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                "photo"
+        ]
+}
+> db.Students.remove({home_state:"jenin"})
+WriteResult({ "nRemoved" : 1 })
+> db.Students.find({name:"layth"}).pretty()
+> db.Students.remove({home_state:"jenin"},true)
+WriteResult({ "nRemoved" : 0 })
+> db.Students.remove({name:"wadee"})
+WriteResult({ "nRemoved" : 1 })
+> db.Students.find({}).pretty()
+{
+        "_id" : ObjectId("61011770c25a4f71d0cf9f71"),
+        "name" : "ibrahem",
+        "home_state" : "ramallah",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : 8,
+                "day" : 9,
+                "year" : 1989
+        },
+        "interest" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ],
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                "photo"
+        ]
+}
+{
+        "_id" : ObjectId("61011822c25a4f71d0cf9f74"),
+        "name" : "tariq",
+        "home_state" : "nablus",
+        "lucky_number" : 5,
+        "birthday" : {
+                "month" : 10,
+                "day" : 28,
+                "year" : 1993
+        },
+        "interest" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+{
+        "_id" : ObjectId("61011854c25a4f71d0cf9f75"),
+        "name" : "ahmad",
+        "home_state" : "ramallah",
+        "lucky_number" : 3,
+        "birthday" : {
+                "month" : 5,
+                "day" : 15,
+                "year" : 1998
+        },
+        "interest" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ],
+        "interests" : [
+                [
+                        "java"
+                ]
+        ]
+}
+> db.Students.remove({lucky_number:gt(5)})
+uncaught exception: ReferenceError: gt is not defined :
+@(shell):1:21
+> db.Students.remove({lucky_number:$gt:5})
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:36
+> db.Students.remove({lucky_number:{$gt:5}})
+WriteResult({ "nRemoved" : 1 })
+> db.Students.update({},{$set: {number_of_belts:0}},false,true)
+WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })
+> db.Students.update({home_state:"ramallah"},{$inc:{home_state:1}},false,true)
+WriteResult({
+        "nMatched" : 0,
+        "nUpserted" : 0,
+        "nModified" : 0,
+        "writeError" : {
+                "code" : 14,
+                "errmsg" : "Cannot apply $inc to a value of non-numeric type. {_id: ObjectId('61011854c25a4f71d0cf9f75')} has the field 'home_state' of non-numeric type string"
+        }
+})
+> db.Students.update({home_state:"ramallah"},{$inc:{number_of_belts:1}},false,true)
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Student.update({$rename:{"number_of_belts":"belts_earned"})
+... ^C
+
+> db.Student.update({$rename:{"number_of_belts":"belts_earned"}})
+uncaught exception: Error: need an update object or pipeline :
+DBCollection.prototype._parseUpdate@src/mongo/shell/collection.js:461:15
+DBCollection.prototype.update@src/mongo/shell/collection.js:510:18
+@(shell):1:1
+> db.Students.update({$rename:{"number_of_belts":"belts_earned"}})
+uncaught exception: Error: need an update object or pipeline :
+DBCollection.prototype._parseUpdate@src/mongo/shell/collection.js:461:15
+DBCollection.prototype.update@src/mongo/shell/collection.js:510:18
+@(shell):1:1
+> db.Students.update({}{$rename:{"number_of_belts":"belts_earned"}})
+uncaught exception: SyntaxError: missing ) after argument list :
+@(shell):1:21
+> db.Students.update({},{$rename:{"number_of_belts":"belts_earned"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Students.update({},{$rename:{"number_of_belts":"belts_earned"}},false,true)
+WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 1 })
+> db.Students.update({},{$unset: {lucky_number}},false,true)
+uncaught exception: ReferenceError: lucky_number is not defined :
+@(shell):1:33
+> db.Students.update({},{$unset:{lucky_number}},false,true)
+uncaught exception: ReferenceError: lucky_number is not defined :
+@(shell):1:32
+> db.Students.update({},{$unset:{lucky_number:1}},false,true)
+WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })
+> db.Students.update({},{$currentDate:{$set: {update_on}},false,true})
+uncaught exception: SyntaxError: false is an invalid identifier :
+@(shell):1:56
+> db.Students.update({},{$currentDate:{$set: {update_on}}},false,true)
+uncaught exception: ReferenceError: update_on is not defined :
+@(shell):1:45
+> db.Students.update({},{$currentDate:{updated_on:{$type:"date"}}},false,true)
+WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })
+> ^C
+bye
