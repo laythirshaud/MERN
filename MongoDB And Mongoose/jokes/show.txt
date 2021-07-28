@@ -1,0 +1,23 @@
+in postman:
+
+http://localhost:8000/api/jokes/new
+
+{"jokes":[{"_id":"6101bc4d8fb5b115302920dd","setup":"3 bant...","punchline":"hhhhhhhh","__v":0},{"_id":"6101bdde8fb5b115302920e0","setup":"any thing","punchline":"hhhhhhhhw","__v":0},{"_id":"6101bde38fb5b115302920e2","setup":"any thing eeeeeee","punchline":"hhhhhhhhw","__v":0}]}
+
+................................................
+
+
+http://localhost:8000/api/jokes/delete/6101bde38fb5b115302920e2
+
+with delete:
+{"jokes":[{"_id":"6101bc4d8fb5b115302920dd","setup":"3 bant...","punchline":"hhhhhhhh","__v":0},{"_id":"6101bdde8fb5b115302920e0","setup":"any thing","punchline":"hhhhhhhhw","__v":0}]}
+
+
+.....................................
+
+
+
+http://localhost:8000/api/jokes/update/6101bc4d8fb5b115302920dd
+
+with put:
+{"jokes":[{"_id":"6101bc4d8fb5b115302920dd","setup":"a lone","punchline":"hahahahah","__v":0},{"_id":"6101bdde8fb5b115302920e0","setup":"any thing","punchline":"hhhhhhhhw","__v":0}]}
