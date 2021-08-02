@@ -1,34 +1,65 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from '@reach/router';
 import axios from 'axios';
+import DeleteButton from './DeleteButton';
 
 const ProductList = (props) => {
-    const { product } = props;
-    const { removeFromDom } = props;
+    const [product, setProduct] = useState([]);
     console.log(product)
-    const deleteProduct = (productId) => {
-        axios.delete('http://localhost:8000/api/product/' + productId)
-            .then(res => {
-                removeFromDom(productId)
-            })
+    
+        useEffect(() => {
+            axios.get('http://localhost:8000/api/product')
+                .then(res => setProduct(res.data));
+        }, [])
+    
+    const removeFromDom = productId => {
+        setProduct(product.filter(Product => Product._id != productId))
     }
 
     return (
         <div>
             {
-                product.map((product, idx) =>
+                props.product.map((product, idx) =>
             {
                 return( 
+                    
                     <p key={idx}>
-                        <Link to={`/product/${product._id}`}>
-                            {product.title}, {product.price}, {product.description}
-                        </Link>
-                        <br></br>
-                        
-                        <button onClick={(e)=>{deleteProduct(product._id)}}>
-                    Delete
-                </button>
-                    </p>
+                    <Link to={`/product/${product._id}`}>
+                        {product.title}, {product.price}, {product.description}
+                    </Link>
+                    <br></br>
+                    |
+                    <Link to={"/product/" + product._id + "/edit"}>
+                        Edit
+                    </Link> 
+                    |
+                   <DeleteButton productId={product._id} successCallback={()=>removeFromDom(product._id)}/>
+                </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 )
             })
             }
