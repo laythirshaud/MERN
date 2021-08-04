@@ -16,24 +16,7 @@ const ProductForm =  (props) => {
         setPrice("");
         setDescription("")
     }
-        //make a post request to create a new person
 
-    //     axios.post('http://localhost:8000/api/product', {
-    //         title,
-    //         price,
-    //         description,
-            
-    //     })
-    //         .then(res=>console.log(res))
-    //         .catch(err=>console.log(err))
-    //         setDescription("")
-    //         setPrice("")
-    //         setTitle("")
-    // }
-    
-    
-
-    //onChange to update firstName and lastName
     return (
         <form onSubmit={onSubmitHandler}>
             <p>
