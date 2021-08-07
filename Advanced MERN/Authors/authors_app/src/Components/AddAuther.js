@@ -14,6 +14,23 @@ const AddAuther = () => {
                  navigate("/")
             
             })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
             // .then(navigate("/"))
             .catch(err => {
                 const errorResponse = err.response.data.errors; // Get the errors from err.response.data
